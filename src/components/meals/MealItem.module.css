@@ -17,36 +17,27 @@
     height: 50%;
     border-radius: 20px;
 }
-.item-action{
+
+.item-action {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     border-top: 2px solid rgb(222, 222, 222);
 }
-.image{
+
+.image {
     width: 100%;
     height: 100%;
     border-radius: 20px;
     object-fit: cover;
 }
-.btn-add{
-    background-color: #97DBAE;
-    border: none;
-    transition: padding 0.45s, background-color 0.45s;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-weight: 500;
-}
-.btn-add:hover{
-    padding: 10px 40px;
-    background-color: #FF8080;
-    color: white;
-}
-.price-tag{
+
+.price-tag {
     font-size: 35px;
     color: #2C394B;
 }
-h1{
+
+h1 {
     color: #2D4263;
 }

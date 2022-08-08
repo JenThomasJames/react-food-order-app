@@ -1,5 +1,13 @@
 import styles from './MealItem.module.css';
+
+import Button from '../shared/Button';
+
 const MealItem = props => {
+
+    const addToCartHandler = () => {
+        props.onMealAdd(props.meal.id);
+    }
+
     return (
         <div className={styles.item}>
             <div className={styles['item-image']} >
@@ -10,7 +18,7 @@ const MealItem = props => {
             </div>
             <div className={styles['item-action']}>
                 <h1 className={styles['price-tag']}>₹{props.meal.price}/-</h1>
-                <button className={styles['btn-add']}>Add to Cart</button>
+                <Button text="Add to Cart" onClick={addToCartHandler} />
             </div>
         </div>
     );

@@ -4,7 +4,10 @@ import logo from '../../assets/logo.png';
 
 import CartButton from './CartButton';
 
-const Header = () => {
+const Header = props => {
+
+    console.log(props.getMealToAdd());
+
     return (
         <div className={styles.header}>
             <img src={logo} alt='App Logo' />

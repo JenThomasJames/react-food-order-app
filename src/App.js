@@ -1,6 +1,7 @@
 import './App.css';
 import Meals from './components/meals/Meals';
 import Header from './components/header/Header';
+import Cart from './components/cart/Cart';
 
 const meals = [
   {
@@ -41,11 +42,20 @@ const meals = [
   }
 ];
 
-function App() {
+const App = () => {
+  let mealToAdd = {};
+  const onMealAdd = id => {
+    mealToAdd = meals[id - 1];
+  }
+
+  const getMealToAdd = () => {
+    return mealToAdd;
+  }
   return (
     <div>
-      <Header></Header>
-      <Meals meals={meals}></Meals>
+      <Header getMealToAdd={getMealToAdd}></Header>
+      <Cart></Cart>
+      <Meals meals={meals} onMealAdd={onMealAdd}></Meals>
     </div>
   );
 }
