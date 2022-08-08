@@ -18,7 +18,7 @@ const ModalDialog = (props) => {
     );
 }
 
-const Modal = () => {
+const Modal = (props) => {
 
     const overlayPortal = document.getElementById('overlays');
 
@@ -27,8 +27,8 @@ const Modal = () => {
             {ReactDOM.createPortal(<ModalDialog>
                 <h1>Total Amount: $12.22</h1>
                 <div className={styles['btn-wrapper']}>
-                    <button className={styles.close}>Order</button>
-                    <button className={styles.close}>Close</button>
+                    <button className={styles.close} onClick={props.onHideModal}>Order</button>
+                    <button className={styles.close} onClick={props.onHideModal}>Close</button>
                 </div>
             </ModalDialog>, overlayPortal)}
             {ReactDOM.createPortal(<Backdrop />, overlayPortal)}

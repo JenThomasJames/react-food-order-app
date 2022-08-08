@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './CartButton.module.css';
 
 const CartButton = props => {
@@ -13,7 +13,7 @@ const CartButton = props => {
     // }, []);
     return (
         <div>
-            <button className={styles.btn}>
+            <button className={styles.btn} onClick={props.onClick}>
                 <span>Cart</span>
                 <span className={styles.badge}>{badgeCount}</span>
             </button>

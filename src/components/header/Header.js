@@ -11,7 +11,7 @@ const Header = props => {
     return (
         <div className={styles.header}>
             <img src={logo} alt='App Logo' />
-            <CartButton></CartButton>
+            <CartButton onClick={props.onShowModal}></CartButton>
         </div>
     );
 }

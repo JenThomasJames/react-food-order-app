@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import Meals from './components/meals/Meals';
 import Header from './components/header/Header';
 import Cart from './components/cart/Cart';
@@ -51,10 +52,20 @@ const App = () => {
   const getMealToAdd = () => {
     return mealToAdd;
   }
+
+  const [showModal, setShowModal] = useState(false);
+
+  const onShowModal = () => {
+    setShowModal(true);
+  }
+
+  const onHideModal = () => {
+    setShowModal(false);
+  }
   return (
     <div>
-      <Header getMealToAdd={getMealToAdd}></Header>
-      <Cart></Cart>
+      <Header getMealToAdd={getMealToAdd} onShowModal={onShowModal} onHideModal={onHideModal}></Header>
+      {showModal && <Cart onShowModal={onShowModal} onHideModal={onHideModal} />}
       <Meals meals={meals} onMealAdd={onMealAdd}></Meals>
     </div>
   );
