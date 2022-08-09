@@ -1,3 +1,31 @@
-cart{
+.wrapper {
     display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+hr {
+    color: #CEE5D0
+}
+
+.items {
+    margin: 20px;
+}
+
+.heading-container {
+    display: flex;
+    justify-content: center;
+    background: #97DBAE;
+    border-radius: 20px;
+    cursor: default;
+}
+
+.title {
+    color: #fff;
+    padding: 20px;
+}
+
+.empty-cart {
+    display: flex;
+    justify-content: center;
 }

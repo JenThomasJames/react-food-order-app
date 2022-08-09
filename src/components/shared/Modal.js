@@ -6,6 +6,7 @@ const Backdrop = () => {
     return (
         <div className={styles.backdrop}></div>
     );
+
 }
 
 const ModalDialog = (props) => {
@@ -25,10 +26,9 @@ const Modal = (props) => {
     return (
         <Fragment>
             {ReactDOM.createPortal(<ModalDialog>
-                <h1>Total Amount: $12.22</h1>
-                <div className={styles['btn-wrapper']}>
-                    <button className={styles.close} onClick={props.onHideModal}>Order</button>
-                    <button className={styles.close} onClick={props.onHideModal}>Close</button>
+                <div className={styles['modal-body']}>
+                    <button className={styles.close} onClick={props.onHideModal}>&times;</button>
+                    {props.children}
                 </div>
             </ModalDialog>, overlayPortal)}
             {ReactDOM.createPortal(<Backdrop />, overlayPortal)}

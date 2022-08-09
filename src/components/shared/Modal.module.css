@@ -21,23 +21,25 @@
     animation: slide-down 300ms ease-out forwards;
 }
 
-.btn-wrapper {
+.modal-body {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
 }
 
 .close {
     padding: 5px 15px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 0, 0, 0.406);
+    border: none;
     background: transparent;
-    transition: background-color 0.2s;
-    font-size: 15px;
+    transition: color 0.5s;
+    color: #D3DEDC;
+    font-size: 25px;
     margin: 0px 10px;
+    align-self: flex-end;
+    cursor: pointer;
 }
 
 .close:hover {
-    background-color: rgba(255, 0, 0, 0.406);
+    color: red;
 }
 
 @media (min-width: 768px) {

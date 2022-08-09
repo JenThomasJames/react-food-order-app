@@ -1,0 +1,26 @@
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image {
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding-left: 20px;
+}
+input{
+    border-radius: 10px;
+    border: 1px solid grey;
+    width: 50px;
+    outline: none;
+    cursor: pointer;
+}
