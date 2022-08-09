@@ -1,8 +1,9 @@
 import './App.css';
-import { useState } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import Meals from './components/meals/Meals';
 import Header from './components/header/Header';
 import Cart from './components/cart/Cart';
+import CartContext from './store/cart-context';
 
 const meals = [
   {
@@ -44,13 +45,15 @@ const meals = [
 ];
 
 const App = () => {
-  let mealToAdd = {};
+  const ctx = useContext(CartContext);
+
   const onMealAdd = id => {
-    mealToAdd = meals[id - 1];
+    let mealToAdd = getMealToAdd(id);
+    ctx.addItemToCart(mealToAdd);
   }
 
-  const getMealToAdd = () => {
-    return mealToAdd;
+  const getMealToAdd = (id) => {
+    return meals[id - 1];
   }
 
   const [showModal, setShowModal] = useState(false);
@@ -63,11 +66,11 @@ const App = () => {
     setShowModal(false);
   }
   return (
-    <div>
-      <Header getMealToAdd={getMealToAdd} onShowModal={onShowModal} onHideModal={onHideModal}></Header>
+    <Fragment>
+      <Header onShowModal={onShowModal}></Header>
       {showModal && <Cart onShowModal={onShowModal} onHideModal={onHideModal} />}
       <Meals meals={meals} onMealAdd={onMealAdd}></Meals>
-    </div>
+    </Fragment>
   );
 }
 

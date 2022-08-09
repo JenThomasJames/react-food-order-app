@@ -1,21 +1,17 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import CartContext from '../../store/cart-context';
 import styles from './CartButton.module.css';
 
 const CartButton = props => {
 
-    const [badgeCount, setBadgeCount] = useState(0);
-    const [mealToAdd, setMealToAdd] = useState();
-    // useEffect(() => {
-    //     // setBadgeCount(previousState => {
-    //     //     return (previousState++);
-    //     // });
-    //     console.log(mealToAdd);
-    // }, []);
+    const ctx = useContext(CartContext);
+    let numberOfItems = ctx.items.length;
+
     return (
         <div>
             <button className={styles.btn} onClick={props.onClick}>
                 <span>Cart</span>
-                <span className={styles.badge}>{badgeCount}</span>
+                <span className={styles.badge}>{numberOfItems}</span>
             </button>
         </div>
     );
