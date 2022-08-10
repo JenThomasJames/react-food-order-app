@@ -19,7 +19,7 @@ const MealItem = props => {
             </div>
             <div className={styles['item-action']}>
                 <h1 className={styles['price-tag']}>₹{props.meal.price}/-</h1>
-                <NumberInput />
+                <NumberInput initialValue={1}/>
                 <Button text="Add to Cart" onClick={addToCartHandler} />
             </div>
         </div>
