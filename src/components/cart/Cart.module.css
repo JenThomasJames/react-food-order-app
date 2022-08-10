@@ -29,3 +29,6 @@ hr {
     display: flex;
     justify-content: center;
 }
+.empty-text{
+    color: #888888;
+}

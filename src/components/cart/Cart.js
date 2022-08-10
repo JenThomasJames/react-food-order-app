@@ -33,7 +33,7 @@ const Cart = (props) => {
             {
                 cartContext.items.length === 0 &&
                 <div className={styles['empty-cart']}>
-                    <h1>Your cart is empty!</h1>
+                    <h1 className={styles['empty-text']}>Your cart is empty!</h1>
                 </div>
             }
         </Modal>
