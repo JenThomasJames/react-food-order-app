@@ -1,0 +1,9 @@
+.number-input{
+    width: 50px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px dashed #76BA99;
+    font-weight: 600;
+}
