@@ -4,9 +4,13 @@ import Button from '../shared/Button';
 import NumberInput from '../shared/NumberInput';
 
 const MealItem = props => {
+    let quantity = 0;
+    const getQuantity = (quantityValue) => {
+        quantity = quantityValue;
+    }
 
     const addToCartHandler = () => {
-        props.onMealAdd(props.meal.id);
+        props.onMealAdd(props.meal.id, quantity);
     }
 
     return (
@@ -19,7 +23,7 @@ const MealItem = props => {
             </div>
             <div className={styles['item-action']}>
                 <h1 className={styles['price-tag']}>₹{props.meal.price}/-</h1>
-                <NumberInput initialValue={1}/>
+                <NumberInput initialValue={1} onQuantityUpdate={getQuantity} />
                 <Button text="Add to Cart" onClick={addToCartHandler} />
             </div>
         </div>

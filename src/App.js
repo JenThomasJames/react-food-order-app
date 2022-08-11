@@ -53,8 +53,11 @@ const meals = [
 const App = () => {
   const ctx = useContext(CartContext);
 
-  const onMealAdd = id => {
+  const onMealAdd = (id, quantity) => {
+    if (quantity === 0)
+      quantity = 1;
     let mealToAdd = getMealToAdd(id);
+    mealToAdd.quantity = +quantity;
     ctx.addItemToCart(mealToAdd);
   }
 

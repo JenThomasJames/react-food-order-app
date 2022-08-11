@@ -1,10 +1,9 @@
-import { Fragment } from 'react';
 import MealItem from './MealItem';
 import styles from './Meals.module.css';
 const Meals = props => {
 
-    const onMealAdd = (id) => {
-        props.onMealAdd(id);
+    const onMealAdd = (id, quantity) => {
+        props.onMealAdd(id, quantity);
     }
 
     return (
